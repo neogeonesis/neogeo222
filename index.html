@@ -214,28 +214,28 @@ His technical approach consists of hybridizing the essence of Latin rhythm with 
 
          <!-- ULTIMOS TEMAS -->
 
-        
-<section style="text-align: center; padding: 40px 0; background-color: #000; width: 100%; position: relative;">
+ <section style="text-align: center; padding: 40px 0; background-color: #000; width: 100%; overflow: hidden;">
     <h3 style="text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; font-size: 1rem; color: #888;">
         Últimos Lanzamientos
     </h3>
     
-    <div style="position: relative; max-width: 1200px; margin: 0 auto;">
+    <div style="position: relative; width: 100%;">
 
         <button onclick="moverCarrusel(-1)" style="
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.7);
+            background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0)); /* Degradado para que se vea pro */
             color: white;
             border: none;
-            font-size: 2rem;
-            padding: 10px 15px;
+            font-size: 3rem; /* Flecha más grande */
+            padding: 20px 20px 20px 10px;
             cursor: pointer;
             z-index: 10;
+            height: 100%; /* Altura completa para evitar clics falsos */
             user-select: none;
-        ">&#10094;</button>
+        ">&#8249;</button>
 
         <div id="carrusel-tracks" style="
             display: flex; 
@@ -243,12 +243,12 @@ His technical approach consists of hybridizing the essence of Latin rhythm with 
             flex-wrap: nowrap; 
             overflow-x: auto; 
             gap: 20px; 
-            padding: 0 50px 20px 50px; /* Padding lateral para que no choquen con las flechas */
+            padding: 0 60px; /* Espacio para que las flechas no tapen el arte */
             width: 100%;
             box-sizing: border-box;
-            scrollbar-width: none; /* Oculta barra en Firefox */
-            -ms-overflow-style: none;  /* Oculta barra en IE/Edge */
-            scroll-behavior: smooth; /* Suaviza el movimiento */
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
         ">
             <style> #carrusel-tracks::-webkit-scrollbar { display: none; } </style>
 
@@ -320,15 +320,16 @@ His technical approach consists of hybridizing the essence of Latin rhythm with 
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.7);
+            background: linear-gradient(to left, rgba(0,0,0,0.9), rgba(0,0,0,0)); /* Degradado inverso */
             color: white;
             border: none;
-            font-size: 2rem;
-            padding: 10px 15px;
+            font-size: 3rem;
+            padding: 20px 10px 20px 20px;
             cursor: pointer;
             z-index: 10;
+            height: 100%;
             user-select: none;
-        ">&#10095;</button>
+        ">&#8250;</button>
 
     </div>
 </section>
@@ -336,20 +337,17 @@ His technical approach consists of hybridizing the essence of Latin rhythm with 
 <script>
     function moverCarrusel(direccion) {
         const contenedor = document.getElementById('carrusel-tracks');
-        const scrollAmount = 320; // 300px de imagen + 20px de gap
+        const scrollAmount = 320; 
         
-        // Si vamos a la derecha (1)
         if (direccion === 1) {
-            // Verificamos si llegamos al final para hacer el "Loop" (volver al principio)
+            // Loop derecha
             if (contenedor.scrollLeft + contenedor.clientWidth >= contenedor.scrollWidth - 10) {
                 contenedor.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
                 contenedor.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             }
-        } 
-        // Si vamos a la izquierda (-1)
-        else {
-            // Si estamos al principio, vamos al final (Loop inverso)
+        } else {
+            // Loop izquierda
             if (contenedor.scrollLeft <= 0) {
                 contenedor.scrollTo({ left: contenedor.scrollWidth, behavior: 'smooth' });
             } else {
@@ -357,7 +355,8 @@ His technical approach consists of hybridizing the essence of Latin rhythm with 
             }
         }
     }
-</script>
+</script>       
+
 
 
         
