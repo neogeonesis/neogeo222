@@ -30,22 +30,30 @@
         .subtitle {
             color: #666;
             font-size: 0.9rem;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* --- ESTILO DEL VISOR 3D "LIBRE" --- */
+        model-viewer {
+            width: 100%;
+            height: 500px; /* MUCHO MÁS GRANDE */
+            background-color: transparent; /* SIN FONDO DE CAJA */
+            outline: none;
+            margin-bottom: 10px;
         }
 
         /* --- LISTA DE REQUISITOS --- */
         .specs-list {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 700px;
+            margin: 40px auto;
             text-align: left;
-            border: 1px solid #333;
-            padding: 20px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 30px 20px;
         }
 
         .spec-item {
-            margin-bottom: 15px;
-            border-bottom: 1px dotted #333;
-            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .spec-title {
@@ -54,35 +62,42 @@
             text-transform: uppercase;
             display: block;
             margin-bottom: 5px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
 
         .spec-detail {
-            color: #888;
-            font-size: 0.9rem;
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* --- NOTA DE FLEXIBILIDAD --- */
         .flexibility-note {
             margin-top: 30px;
-            padding: 15px;
-            border: 1px dashed #fff;
+            padding: 20px;
+            border: 1px dashed #555;
             display: inline-block;
-            max-width: 500px;
+            max-width: 600px;
             font-size: 0.9rem;
-            line-height: 1.5;
+            line-height: 1.6;
+            color: #ccc;
+            background-color: #050505;
         }
 
         /* --- BOTÓN DESCARGAR / VOLVER --- */
         .action-btn {
             display: inline-block;
             margin-top: 40px;
-            padding: 10px 30px;
+            padding: 12px 35px;
             border: 1px solid white;
             color: white;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             transition: 0.3s;
+            letter-spacing: 2px;
+            font-weight: bold;
         }
         .action-btn:hover {
             background-color: white;
@@ -95,35 +110,22 @@
     <h1>Technical Rider</h1>
     <p class="subtitle">NEOGEO222 // 2026 SETUP</p>
 
-    <div style="margin: 0 auto 40px auto; max-width: 800px; text-align: center;">
-        
-        <model-viewer 
-            src="cdj.glb" 
-            alt="Setup DJ Referencial 3D"
-            auto-rotate 
-            camera-controls
-            ar 
-            shadow-intensity="2"
-            exposure="0.6" 
-            style="
-                width: 100%; 
-                height: 350px; 
-                background-color: #0a0a0a; 
-                border: 1px solid #333; 
-                border-radius: 8px;
-                outline: none;
-            "
-        >
-            <div slot="poster" style="display: flex; justify-content: center; align-items: center; height: 100%; color: #666;">
-                Cargando 3D...
-            </div>
-        </model-viewer>
+    <model-viewer 
+        src="TU_ARCHIVO_CDJ.glb" 
+        alt="Setup DJ Referencial 3D"
+        auto-rotate 
+        camera-controls
+        ar 
+        shadow-intensity="1"
+        exposure="0.8"
+        disable-zoom 
+    >
+    </model-viewer>
 
-        <p style="color: #555; font-size: 0.7rem; margin-top: 10px; font-style: italic;">
-            * Imagen referencial. El hardware  puede variar según disponibilidad.
-        </p>
+    <p style="color: #444; font-size: 0.7rem; margin-top: -20px; margin-bottom: 40px; font-style: italic; text-transform: uppercase; letter-spacing: 1px;">
+        * Imagen 3D referencial // Hardware sujeto a cambios
+    </p>
 
-    </div>
     <div class="specs-list">
         
         <div class="spec-item">
@@ -139,25 +141,24 @@
             <span class="spec-title">2. Versatilidad (Opciones Aceptadas)</span>
             <span class="spec-detail">
                 Si no hay cabina CDJ estándar, me adapto a:<br>
-                • cualquier tipo de Controladoras: Pioneer, FLX-4/6/10 o XDJ Series.<br>
-                • Requisito: tener laptop con rekordbox<br>
-                • Se solicita confirmar el formato de presentación deseado <strong>DJ Set estándar, Hybrid Set o Live Set</strong>
+                • Cualquier tipo de Controladora: Pioneer, FLX-4/6/10 o XDJ Series.<br>
+                • Requisito: tener laptop con rekordbox.<br>
             </span>
         </div>
 
     </div>
 
     <div class="flexibility-note">
-        <strong>NOTA:</strong> <br>
+        <strong>NOTA TÉCNICA:</strong> <br><br>
         • Flexible con el hardware. <br>
         • Disponibilidad de equipamiento propio sujeto a coordinación logística previa.<br> 
-        • Se solicita confirmar el formato de presentación deseado <strong>(DJ Set estándar, Hybrid Set o Live Set)</strong> 
+        • Se solicita confirmar el formato de presentación deseado: <strong>DJ Set estándar, Hybrid Set o Live Set</strong> 
         con antelación para ajustar los requerimientos técnicos y el montaje en cabina. 
     </div>
 
     <br>
 
-    <a href="javascript:window.print()" class="action-btn">Imprimir / Guardar PDF</a>
+    <a href="javascript:window.print()" class="action-btn">Imprimir Rider</a>
     <br><br>
     <a href="index.html" style="color: #666; text-decoration: none; font-size: 0.8rem;">← Volver al inicio</a>
 
