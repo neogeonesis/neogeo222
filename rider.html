@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEOGEO222 - Tech Rider</title>
+    
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <style>
         body {
             background-color: #000;
@@ -28,53 +31,6 @@
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 40px;
-        }
-
-        /* --- DIAGRAMA VISUAL (Estilo Industrial) --- */
-        .diagram-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-
-        .device {
-            border: 2px solid #fff;
-            padding: 20px;
-            width: 120px;
-            height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .device.mixer {
-            width: 140px;
-            height: 160px; /* Mixer es más alto */
-            border: 2px solid #888; /* Diferenciarlo un poco */
-        }
-
-        .device h3 {
-            margin: 0;
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-
-        .device p {
-            font-size: 0.7rem;
-            color: #aaa;
-            margin-top: 5px;
-        }
-
-        /* Cables virtuales */
-        .cable-line {
-            height: 2px;
-            background-color: #333;
-            width: 30px;
         }
 
         /* --- LISTA DE REQUISITOS --- */
@@ -112,6 +68,8 @@
             border: 1px dashed #fff;
             display: inline-block;
             max-width: 500px;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         /* --- BOTÓN DESCARGAR / VOLVER --- */
@@ -130,7 +88,6 @@
             background-color: white;
             color: black;
         }
-
     </style>
 </head>
 <body>
@@ -138,34 +95,42 @@
     <h1>Technical Rider</h1>
     <p class="subtitle">NEOGEO222 // 2026 SETUP</p>
 
-    <div class="diagram-container">
-        <div class="device">
-            <h3>CDJ</h3>
-            <p>Pioneer<br>Link (LAN)</p>
-        </div>
+    <div style="margin: 0 auto 40px auto; max-width: 800px; text-align: center;">
+        
+        <model-viewer 
+            src="TU_ARCHIVO_CDJ.glb" 
+            alt="Setup DJ Referencial 3D"
+            auto-rotate 
+            camera-controls
+            ar 
+            shadow-intensity="2"
+            exposure="0.6" 
+            style="
+                width: 100%; 
+                height: 350px; 
+                background-color: #0a0a0a; 
+                border: 1px solid #333; 
+                border-radius: 8px;
+                outline: none;
+            "
+        >
+            <div slot="poster" style="display: flex; justify-content: center; align-items: center; height: 100%; color: #666;">
+                Cargando 3D...
+            </div>
+        </model-viewer>
 
-        <div class="cable-line"></div>
+        <p style="color: #555; font-size: 0.7rem; margin-top: 10px; font-style: italic;">
+            * Imagen 3D referencial. El hardware real puede variar según disponibilidad.
+        </p>
 
-        <div class="device mixer">
-            <h3>MIXER</h3>
-            <p>DJM 900 / V10<br>4 Ch + Booth</p>
-        </div>
-
-        <div class="cable-line"></div>
-
-        <div class="device">
-            <h3>CDJ</h3>
-            <p>Pioneer<br>Link (LAN)</p>
-        </div>
     </div>
-
     <div class="specs-list">
         
         <div class="spec-item">
             <span class="spec-title">1. Configuración Preferente (Standard)</span>
             <span class="spec-detail">
-                • 2x Pioneer CDJ 1000 // ó CDJ 700 // ó CDJ-3000 // o CDJ-2000NXS2  <br>
-                • 1x Pioneer  Mixer (900 NXS2 / A9 / V10) <br>
+                • 2x Pioneer CDJ 1000 // ó CDJ 700 // ó CDJ-3000 // o CDJ-2000NXS2 <br>
+                • 1x Pioneer Mixer (900 NXS2 / A9 / V10) <br>
                 • Adaptable al lugar 
             </span>
         </div>
@@ -173,25 +138,21 @@
         <div class="spec-item">
             <span class="spec-title">2. Versatilidad (Opciones Aceptadas)</span>
             <span class="spec-detail">
-                Si no hay cabina CDJ estándar,me adapto  a:<br>
+                Si no hay cabina CDJ estándar, me adapto a:<br>
                 • cualquier tipo de Controladoras: Pioneer, FLX-4/6/10 o XDJ Series.<br>
                 • Requisito: tener laptop con rekordbox<br>
-                •  Se solicita confirmar el formato de presentación deseado<strong> DJ Set estándar, Hybrid Set o Live Set</strong>
+                • Se solicita confirmar el formato de presentación deseado <strong>DJ Set estándar, Hybrid Set o Live Set</strong>
             </span>
         </div>
-
-     
-
-      
 
     </div>
 
     <div class="flexibility-note">
-        <strong>NOTA:</strong>  <br>
-      •Flexible con el hardware. <br>
-     •Disponibilidad de equipamiento propio sujeto a coordinación logística previa.<br> 
-     •Se solicita confirmar el formato de presentación deseado<strong> (DJ Set estándar, Hybrid Set o Live Set)</strong>• 
-     con antelación para ajustar los requerimientos técnicos y el montaje en cabina. 
+        <strong>NOTA:</strong> <br>
+        • Flexible con el hardware. <br>
+        • Disponibilidad de equipamiento propio sujeto a coordinación logística previa.<br> 
+        • Se solicita confirmar el formato de presentación deseado <strong>(DJ Set estándar, Hybrid Set o Live Set)</strong> 
+        con antelación para ajustar los requerimientos técnicos y el montaje en cabina. 
     </div>
 
     <br>
