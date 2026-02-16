@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOGEO222 - Tech Rider</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        /* --- DIAGRAMA VISUAL (Estilo Industrial) --- */
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .device {
+            border: 2px solid #fff;
+            padding: 20px;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .device.mixer {
+            width: 140px;
+            height: 160px; /* Mixer es más alto */
+            border: 2px solid #888; /* Diferenciarlo un poco */
+        }
+
+        .device h3 {
+            margin: 0;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .device p {
+            font-size: 0.7rem;
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        /* Cables virtuales */
+        .cable-line {
+            height: 2px;
+            background-color: #333;
+            width: 30px;
+        }
+
+        /* --- LISTA DE REQUISITOS --- */
+        .specs-list {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            border: 1px solid #333;
+            padding: 20px;
+        }
+
+        .spec-item {
+            margin-bottom: 15px;
+            border-bottom: 1px dotted #333;
+            padding-bottom: 10px;
+        }
+
+        .spec-title {
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .spec-detail {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* --- NOTA DE FLEXIBILIDAD --- */
+        .flexibility-note {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px dashed #fff;
+            display: inline-block;
+            max-width: 500px;
+        }
+
+        /* --- BOTÓN DESCARGAR / VOLVER --- */
+        .action-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 30px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+        .action-btn:hover {
+            background-color: white;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Technical Rider</h1>
+    <p class="subtitle">NEOGEO222 // 2026 SETUP</p>
+
+    <div class="diagram-container">
+        <div class="device">
+            <h3>CDJ</h3>
+            <p>Pioneer<br>Link (LAN)</p>
+        </div>
+
+        <div class="cable-line"></div>
+
+        <div class="device mixer">
+            <h3>MIXER</h3>
+            <p>DJM 900 / V10<br>4 Ch + Booth</p>
+        </div>
+
+        <div class="cable-line"></div>
+
+        <div class="device">
+            <h3>CDJ</h3>
+            <p>Pioneer<br>Link (LAN)</p>
+        </div>
+    </div>
+
+    <div class="specs-list">
+        
+        <div class="spec-item">
+            <span class="spec-title">1. Configuración Preferente (Standard)</span>
+            <span class="spec-detail">
+                • 2x Pioneer CDJ (2000 NXS2 / 3000)<br>
+                • 1x Pioneer DJM Mixer (900 NXS2 / A9 / V10)<br>
+                • Conexión LINK (Ethernet) activa entre equipos.
+            </span>
+        </div>
+
+        <div class="spec-item">
+            <span class="spec-title">2. Versatilidad (Opciones Aceptadas)</span>
+            <span class="spec-detail">
+                Si no hay cabina CDJ estándar, el artista se adapta a:<br>
+                • Controladoras: Pioneer DDJ-400, FLX-4/6/10 o XDJ Series.<br>
+                • Requisito: Espacio suficiente para Laptop + Stand.
+            </span>
+        </div>
+
+        <div class="spec-item">
+            <span class="spec-title">3. Monitoreo & Sonido</span>
+            <span class="spec-detail">
+                • 2x Monitores de cabina con control de volumen independiente (Booth).<br>
+                • Sistema PA Estéreo de alta calidad sin limitadores agresivos.
+            </span>
+        </div>
+
+        <div class="spec-item">
+            <span class="spec-title">4. Conexiones</span>
+            <span class="spec-detail">
+                • 2x Tomas de corriente (220v) libres en cabina.<br>
+                • Mesa despejada de al menos 1m x 0.5m.
+            </span>
+        </div>
+
+    </div>
+
+    <div class="flexibility-note">
+        <strong>NOTA:</strong> Trabajo con formato <strong>REKORDBOX</strong> (USB). <br>
+        Soy flexible con el hardware siempre que las conexiones (RCA/Link) estén en buen estado.
+    </div>
+
+    <br>
+
+    <a href="javascript:window.print()" class="action-btn">Imprimir / Guardar PDF</a>
+    <br><br>
+    <a href="index.html" style="color: #666; text-decoration: none; font-size: 0.8rem;">← Volver al inicio</a>
+
+</body>
+</html>
